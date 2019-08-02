@@ -45,3 +45,14 @@
 
 </footer>
 <script type="text/javascript" src="{{ site.baseurl }}/assets/js/script.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
